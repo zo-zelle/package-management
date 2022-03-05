@@ -23,11 +23,15 @@ sudo yum install java-1.8.0-openjdk-devel -y
 # Download tomcat software and extract it.
 sudo yum install wget unzip -y
 sudo wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.17/bin/apache-tomcat-10.0.17.tar.gz
-sudo tar -xvf apache-tomcat-9.0.55.tar.gz
-sudo rm apache-tomcat-9.0.55.tar.gz
-sudo mv apache-tomcat-9.0.55 tomcat9
-sudo chmod 777 -R /opt/tomcat9
-sudo sh /opt/tomcat9/bin/startup.sh
+# Since it is a tar file, we have to extract
+sudo tar -xvf apache-tomcat-10.0.17.tar.gz
+# once extracted, we dont need the archive anymore, so remove
+sudo rm apache-tomcat-10.0.17.tar.gz
+# Rename for good naming convention
+sudo mv apache-tomcat-10.0.17 tomcat10
+# We need to assign executable permission so that we can be able to read file
+sudo chmod 777 -R /opt/tomcat10
+sudo sh /opt/tomcat10/bin/startup.sh
 # create a soft link to start and stop tomcat
 sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
 sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
