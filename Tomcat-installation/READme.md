@@ -31,10 +31,12 @@ sudo rm apache-tomcat-10.0.17.tar.gz
 sudo mv apache-tomcat-10.0.17 tomcat10
 # We need to assign executable permission so that we can be able to read file
 sudo chmod 777 -R /opt/tomcat10
+# Tomcat can be started using the absolute path as below
 sudo sh /opt/tomcat10/bin/startup.sh
-# create a soft link to start and stop tomcat
-sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
-sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
-starttomcat
+# create a soft link to start and stop tomcat from anywhere
+sudo ln -s /opt/tomcat10/bin/startup.sh /usr/bin/starttomcat
+sudo ln -s /opt/tomcat10/bin/shutdown.sh /usr/bin/stoptomcat
+# After creating soft link, you can
+sudo starttomcat
 ```
 
