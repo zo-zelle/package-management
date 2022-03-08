@@ -4,7 +4,7 @@
 
 
 
-## SonarQube Installation And Setup In AWS EC2 Redhat Instnace.
+## SonarQube Installation And Setup In AWS EC2 Redhat Instance.
 ##### Prerequisite
 + AWS Acccount.
 + Create Redhat EC2 T2.medium Instnace with 4GB RAM.
